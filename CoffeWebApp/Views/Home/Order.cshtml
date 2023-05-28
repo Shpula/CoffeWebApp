@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CoffeeMachine>
+@{
+    ViewData["Title"] = "Каталог товаров";
+}
+<h3>Кофемашины</h3>
+<table class="table-condensed">
+    <tr>
+        <td>Цена</td>
+        <td>Бренд</td>
+        <td>Материал</td>
+        <td>Размер</td>
+        <td>Вес</td>
+        <td>Капсульный</td>
+        <td></td>
+    </tr>
+    @foreach (var coffee in Model)
+    {
+        <tr>
+            <td>@coffee.Price</td>
+            <td>@coffee.Brand</td>
+            <td>@coffee.Material</td>
+            <td>@coffee.Capacity</td>
+            <td>@coffee.Weight</td>
+            <td>@coffee.IsCapsule</td>
+            <td><a href="~/Home/Buy/@coffee.Id">Купить</a></td>
+        </tr>
+    }
+</table>
